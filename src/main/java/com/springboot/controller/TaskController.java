@@ -8,36 +8,31 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.model.Event;
+import com.springboot.model.Task;
 import com.springboot.service.EventService;
+import com.springboot.service.TaskService;
 
-@RestController
-public class EventController {
-	
+public class TaskController {
+
 	@Autowired
-	EventService eventService;
-	
-	@GetMapping("/")
-	public String WelcomePage() {
-		return "Welcome to REST ";
-	}
+	TaskService taskService;
 	
 	@CrossOrigin
-	@GetMapping("/events")
-	public Iterable<Event> retrieveAllEvents() {
-		return eventService.getListofEvents();
+	@GetMapping("/tasks")
+	public Iterable<Task> retrieveAllTasks() {
+		return taskService.getListofTasks();
 	}
 	
-	@GetMapping("/events/{id}")
-	public Optional<Event> getEventById(@PathVariable int id) {
-		return eventService.getEventById(id);
+	@GetMapping("/tasks/{id}")
+	public Optional<Task> getEventById(@PathVariable int id) {
+		return taskService.getTaskById(id);
 	}
 
 	@PostMapping("/events")
-	public void addEvent(@RequestBody Event event) {
-		 eventService.addNewEvent(event);
+	public void addEvent(@RequestBody Task task) {
+		taskService.addNewTask(task);
 	}
 
 }

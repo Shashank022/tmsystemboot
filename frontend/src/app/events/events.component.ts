@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { request } from 'http';
+import  model from '../event';
 
 @Component({
   selector: 'app-events',
@@ -28,7 +30,6 @@ export class EventsComponent {
   }
 
   getEventDetails(eventid) {
-    debugger;
     return new Promise((resolve, reject) => {
       let error = false;
       if (!error) {
@@ -49,12 +50,13 @@ export class EventsComponent {
   };
 
   updateEventDetails(eventid) {
-    debugger;
+ 
     return new Promise((resolve, reject) => {
       let error = false;
       if (!error) {
+        
         resolve(
-          this.http.get(this.APP_URL + "/events/" + eventid).subscribe(
+          this.http.post(this.APP_URL + "/events/" + eventid, request.body).subscribe(
             data => {
               this.response = data;
               this.isVisible = true;
@@ -70,7 +72,6 @@ export class EventsComponent {
   };
 
   deleteEvent(eventid) {
-    debugger;
     this.http.delete(this.APP_URL + "/events/" + eventid).subscribe(
       data => {
         this.response = data;
@@ -88,9 +89,8 @@ export class EventsComponent {
   }
 
   formatDate(date) {
-    debugger;
     var date1 = new Date(date);
-    var newdate = (date.getMonth() + 1) + '/' + date1.getDate() + '/' + date1.getFullYear();
+    var newdate = (date1.getMonth() + 1) + '/' + date1.getDate() + '/' + date1.getFullYear();
     return newdate;
   }
 
