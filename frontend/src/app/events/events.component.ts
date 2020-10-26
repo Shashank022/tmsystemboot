@@ -8,7 +8,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 })
 export class EventsComponent {
 
-  private APP_URL: string = "http://localhost:5800/api/";
+  private APP_URL: string = "http://localhost:5008/";
   public response: any;
   public isVisible: boolean = false;
 
