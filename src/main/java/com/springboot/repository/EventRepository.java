@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.springboot.model.Event;
 
 @Repository
-public interface EventRepository extends CrudRepository<Event, Integer>, GroupRepository {
+public interface EventRepository extends CrudRepository<Event, Integer> {
 
 	
 }
