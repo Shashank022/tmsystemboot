@@ -27,6 +27,14 @@ CREATE TABLE roles (
 );
 
 
+
+INSERT INTO ROLES VALUES (1, 'Admin', 11);
+INSERT INTO ROLES VALUES (2, 'User', 12);
+INSERT INTO ROLES VALUES (3, 'Updater', 13);
+INSERT INTO ROLES VALUES (4, 'Creator', 14);
+
+
+
 DROP TABLE IF EXISTS task_updates;
 CREATE TABLE task_updates (
   id int(11) NOT NULL,
@@ -52,6 +60,14 @@ CREATE TABLE tasks (
   PRIMARY KEY (task_id)
 );
 
+INSERT INTO TASKS VALUES (1, 'Services', 22 , '2019-06-26', 'Peter', 4);
+INSERT INTO TASKS VALUES (2, 'Microservices', 22 , '2019-06-26', 'Martin', 3);
+INSERT INTO TASKS VALUES (3, 'Operations', 23 , '2019-06-26', 'Kumar', 2);
+INSERT INTO TASKS VALUES (4, 'Centos', 24 , '2019-06-26', 'Smith', 4);
+INSERT INTO TASKS VALUES (5, 'Zlinux', 23 , '2019-06-26', 'John', 5);
+INSERT INTO TASKS VALUES (6, 'Ubuntu', 26 , '2019-06-26', 'Kevin', 1);
+INSERT INTO TASKS VALUES (7, 'Windows', 25 , '2019-06-26', 'Raja', 2);
+
 
 DROP TABLE IF EXISTS teams;
 CREATE TABLE teams (
@@ -62,6 +78,13 @@ CREATE TABLE teams (
   PRIMARY KEY (team_id)
 );
 
+INSERT INTO TEAMS VALUES (22, 'Services', 2 , 3);
+INSERT INTO TEAMS VALUES (23, 'Operations', 1 , 2);
+INSERT INTO TEAMS VALUES (24, 'Centos', 3 , 3);
+INSERT INTO TEAMS VALUES (25, 'Zlinux', 2 , 4);
+INSERT INTO TEAMS VALUES (26, 'Ubuntu', 4 , 5);
+INSERT INTO TEAMS VALUES (27, 'Windows', 1 , 6);
+
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
@@ -71,3 +94,12 @@ CREATE TABLE users (
   user_role int(11) DEFAULT NULL,
   PRIMARY KEY (id)
 );
+
+INSERT INTO USERS VALUES(21,'Peter','peter@gmail.com',11);
+INSERT INTO USERS VALUES(22,'Smith','smith@gmail.com',12);
+INSERT INTO USERS VALUES(23,'Keviin','kevin@gmail.com',13);
+INSERT INTO USERS VALUES(24,'Raja','raja@gmail.com',14);
+
+
+
+
