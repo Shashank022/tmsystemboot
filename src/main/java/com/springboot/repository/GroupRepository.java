@@ -2,8 +2,10 @@ package com.springboot.repository;
 
 import java.util.List;
 import com.springboot.model.Event;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface GroupRepository {
-	public List<Event> getListofJoinData();
+	List<Event> getListofJoinData();
 	
 }
