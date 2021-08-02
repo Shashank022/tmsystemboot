@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { request } from 'http';
 import  model from '../event';
+import event from "../event";
 
 @Component({
   selector: 'app-events',
@@ -14,11 +14,11 @@ export class EventsComponent {
   public response: any;
   public isVisible: boolean = false;
 
-  constructor(private http: HttpClient) {
+  constructor(private httpClient: HttpClient) {
   }
 
   ngOnInit(): void {
-    this.http.get(this.APP_URL + 'events').subscribe(
+    this.httpClient.get(this.APP_URL + 'events').subscribe(
       data => {
         this.response = data;
         console.log(data);
@@ -34,7 +34,7 @@ export class EventsComponent {
       let error = false;
       if (!error) {
         resolve(
-          this.http.get(this.APP_URL + "/events/" + eventid).subscribe(
+          this.httpClient.get(this.APP_URL + "/events/" + eventid).subscribe(
             data => {
               this.response = data;
               this.isVisible = true;
@@ -50,13 +50,14 @@ export class EventsComponent {
   };
 
   updateEventDetails(eventid) {
- 
+
     return new Promise((resolve, reject) => {
       let error = false;
+      const body=JSON.stringify(event);
       if (!error) {
-        
+
         resolve(
-          this.http.post(this.APP_URL + "/events/" + eventid, request.body).subscribe(
+          this.httpClient.get(this.APP_URL + "/events/" + eventid).subscribe(
             data => {
               this.response = data;
               this.isVisible = true;
@@ -72,7 +73,7 @@ export class EventsComponent {
   };
 
   deleteEvent(eventid) {
-    this.http.delete(this.APP_URL + "/events/" + eventid).subscribe(
+    this.httpClient.delete(this.APP_URL + "/events/" + eventid).subscribe(
       data => {
         this.response = data;
         console.log(data);

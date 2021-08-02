@@ -1,9 +1,13 @@
 package com.springboot.model;
 
 import java.util.Date;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "TASKS")
 public class Task {
 	@Id
 	@GeneratedValue
@@ -13,7 +17,7 @@ public class Task {
 	private Date task_created;
 	private String task_updated;
 	private int event_id;
-	
+
 	public Task() {
 		super();
 		// TODO Auto-generated constructor stub
