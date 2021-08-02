@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import com.springboot.model.Task;
 import com.springboot.service.TaskService;
 
-@CrossOrigin(origins = "http://localhost:5008")
 @RestController
 public class TaskController {
 

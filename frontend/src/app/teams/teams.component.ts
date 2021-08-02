@@ -10,7 +10,7 @@ export class TeamsComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
 
-  private APP_URL : string = "http://localhost:3000/api/";
+  private APP_URL: string = "http://localhost:5008/";
   public response: any;
 
   ngOnInit(): void {
