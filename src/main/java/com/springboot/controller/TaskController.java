@@ -26,7 +26,7 @@ public class TaskController {
 		return taskService.getTaskById(id);
 	}
 
-	@PostMapping("/events")
+	@PostMapping("/tasks")
 	public void addEvent(@RequestBody Task task) {
 		taskService.addNewTask(task);
 	}

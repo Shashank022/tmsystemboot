@@ -11,3 +11,12 @@ bin/
 *.projects
 *.prefs
 *.project
+/target/
+/.classpath
+/*.project
+/.settings
+/*.springBeans
+.classpath
+.idea/
+*.iml
+*.iws
