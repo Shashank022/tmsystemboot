@@ -1,0 +1,32 @@
+
+<div class="container">
+    <div>
+        <h5 class="text-left"><strong>List of Events:</strong></h5>
+        <span>
+            <div  *ngFor="let event of response">
+                <div class="card border-success mb-3">
+                    <div class="card-columns" >
+                      <div class="card-body">
+                        <h6 class="card-title"><strong>Event ID:</strong>{{ event.id }} </h6>
+                        <p class="card-text"><strong>Name :</strong> {{ event.event_name }} </p>
+                        <p class="card-text"><strong>Created Date : </strong>{{ formatDate(event.created_date) }} </p>
+                        <p class="card-text"><strong>Created By : </strong>{{event.created_by}} </p>
+                        <br>
+                        <div style="text-align:center;">
+                            <a class="btn btn-warning" (click)="getEventDetails(event.id)"  role="button"><strong>More..</strong></a>&nbsp;
+                            <a class="btn btn-success" (click)="updateEventDetails(event.id)"  role="button"><strong>Update</strong></a>&nbsp;
+                            <a class="btn btn-danger" (click)="deleteEvent(event.id)"  role="button"><strong>Delete</strong></a>&nbsp;     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div >
+        <div ngif="isVisible">
+            <div class="card-columns" >
+                <div>Welcome to the New Division Class</div>
+            </div>
+        </div>
+    </span>
+
+    </div>
+</div>

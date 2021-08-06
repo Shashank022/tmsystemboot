@@ -3,6 +3,7 @@ package com.springboot.controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,23 +18,26 @@ public class EventController {
 	
 	@Autowired
 	EventService eventService;
-	
+
 	@GetMapping("/")
 	public String WelcomePage() {
 		return "Welcome to REST ";
 	}
 	
-	@GetMapping("/eventlist")
+	@CrossOrigin
+	@GetMapping("/events")
 	public Iterable<Event> retrieveAllEvents() {
 		return eventService.getListofEvents();
 	}
-	
-	@GetMapping("/eventlist/{id}")
+
+	@CrossOrigin
+	@GetMapping("/events/{id}")
 	public Optional<Event> getEventById(@PathVariable int id) {
 		return eventService.getEventById(id);
 	}
 
-	@PostMapping("/addevent")
+	@CrossOrigin
+	@PostMapping("/events")
 	public void addEvent(@RequestBody Event event) {
 		 eventService.addNewEvent(event);
 	}

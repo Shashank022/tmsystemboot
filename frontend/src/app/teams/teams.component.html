@@ -1,0 +1,25 @@
+
+<div class="container">
+    <div>
+         <h5 class="text-left"><strong>List of Teams:</strong></h5>
+        <span>
+            <div  *ngFor="let team of response">
+                <div class="card border-success mb-3">
+                    <div class="card-columns" >
+                      <div class="card-body">
+                        <h6 class="card-title"><strong>Event ID:</strong>{{ team.id }} </h6>
+                        <p class="card-text"><strong>Name :</strong> {{ team.teamname }} </p>
+                        <p class="card-text"><strong>Created By : </strong>{{ team.createdby}} </p>
+                        <div class="">
+                            <a class="btn btn-warning" (click)="getTeamDetails(team.id)"  role="button"><strong>More..</strong></a>&nbsp;
+                            <a class="btn btn-success" href="#" role="button"><strong>Update</strong></a>&nbsp;
+                            <a class="btn btn-danger" (click)="deleteTeam(team.id)"  role="button"><strong>Delete</strong></a>&nbsp;    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </span>
+
+    </div>
+</div>
